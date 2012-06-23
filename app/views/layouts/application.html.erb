@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Facebook: Include the JavaScript SDK on your page once, ideally right after the opening <body> tag.
+Replace APP_ID in the code below with an existing app ID, or create a new app. -->
+
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=434971053203080D";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <%= yield %>
+<!-- Place the code for your plugin wherever you want the plugin to appear on your page. -->
+
+<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
 
 </body>
 </html>
